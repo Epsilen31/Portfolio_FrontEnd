@@ -1,0 +1,6 @@
+.project-banner {
+  width: 100%; /* Set width as needed */
+  height: 280px; /* Set height to ensure consistency */
+  object-fit: cover; /* Ensure the image covers the area */
+  border-radius: 8px; /* Optional: add border radius for rounded corners */
+}

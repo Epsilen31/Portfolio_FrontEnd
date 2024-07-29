@@ -15,7 +15,7 @@ const Contact = () => {
     setLoading(true);
     await axios
       .post(
-        "http://localhost:8000/api/v1/message/send",
+        "https://portfolio-backend-1mty.onrender.com/api/v1/message/send",
         { senderName, subject, message },
         {
           withCredentials: true,
@@ -43,7 +43,8 @@ const Contact = () => {
             lg:text-[3rem] leading-[56px] md:leading-[67px] lg:leading-[90px] 
             tracking-[15px] mx-auto w-fit font-extrabold about-h1"
             style={{
-              background: "hsl(222.2 84% 4.9%)",
+              color: "var(--foreground)",
+              background: "hsl(var(--background))",
             }}
           >
             CONTACT

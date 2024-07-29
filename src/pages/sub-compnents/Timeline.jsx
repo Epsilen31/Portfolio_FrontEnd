@@ -6,7 +6,7 @@ const Timeline = () => {
   useEffect(() => {
     const getMyTimeline = async () => {
       const { data } = await axios.get(
-        "http://localhost:8000/api/v1/timeline/getAll",
+        "https://portfolio-backend-1mty.onrender.com/api/v1/timeline/getAll",
         { withCredentials: true }
       );
       console.log(data);

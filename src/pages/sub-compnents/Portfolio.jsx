@@ -2,21 +2,24 @@ import { Button } from "@/components/ui/button";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./Portfolio.css"; // Import your CSS file
 
 const Portfolio = () => {
   const [viewAll, setViewAll] = useState(false);
   const [projects, setProjects] = useState([]);
+
   useEffect(() => {
     const getMyProjects = async () => {
       const { data } = await axios.get(
-        "http://localhost:8000/api/v1/project/getAllProject",
+        "https://portfolio-backend-1mty.onrender.com/api/v1/project/getAllProject",
         { withCredentials: true }
       );
       console.log("project", data);
-      setProjects(data.data);
+      setProjects(data.data.reverse()); // Reverse the order here
     };
     getMyProjects();
   }, []);
+
   return (
     <div>
       <div className="relative mb-12">
@@ -25,13 +28,12 @@ const Portfolio = () => {
           lg:text-[3.8rem] leading-[56px] md:leading-[67px] lg:leading-[90px] tracking-[15px] 
           mx-auto w-fit font-extrabold about-h1"
           style={{
-            background: "hsl(222.2 84% 4.9%)",
+            color: "var(--foreground)",
+            background: "hsl(var(--background))",
           }}
         >
           MY{" "}
-          <span className="text-tubeLight-effect font-extrabold">
-            PORTFOLIO
-          </span>
+          <span className="text-tubeLight-effect font-extrabold">PROJECTS</span>
         </h1>
         <h1
           className="flex sm:hidden gap-4 items-center text-[2rem] sm:text-[2.75rem] 
@@ -52,6 +54,7 @@ const Portfolio = () => {
               return (
                 <Link to={`/project/${element._id}`} key={element._id}>
                   <img
+                    className="project-banner" // Apply the class here
                     src={element.projectBanner && element.projectBanner.url}
                     alt={element.title}
                   />
@@ -63,6 +66,7 @@ const Portfolio = () => {
               return (
                 <Link to={`/project/${element._id}`} key={element._id}>
                   <img
+                    className="project-banner" // Apply the class here
                     src={element.projectBanner && element.projectBanner.url}
                     alt={element.title}
                   />

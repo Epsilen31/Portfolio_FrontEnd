@@ -16,7 +16,7 @@ const Hero = () => {
   useEffect(() => {
     const getMyProfile = async () => {
       const { data } = await axios.get(
-        "http://localhost:8000/api/v1/user/getPortfolioUser/me",
+        "https://portfolio-backend-1mty.onrender.com/api/v1/user/getPortfolioUser/me",
         { withCredentials: true }
       );
       setUser(data.user);
@@ -40,7 +40,7 @@ const Hero = () => {
       sm:text-[1.75rem] md:text-[2.2rem] lg:text-[2.8rem] tracking-[15px]"
       >
         <Typewriter
-          words={["FULLSTACK DEVELOPER", "YOUTUBER", "FREELANCER"]}
+          words={["FULLSTACK DEVELOPER", "PROGRAMMER", "FREELANCER"]}
           loop={50}
           cursor
           typeSpeed={70}
