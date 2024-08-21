@@ -35,6 +35,25 @@
     --radius: 0.5rem;
   }
 
+  /* Ensure 3D transformation effects work */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
+  /* Optional: Add additional styles if needed */
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;

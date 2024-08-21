@@ -80,7 +80,7 @@ const Contact = () => {
               placeholder="Your Message"
             />
           </div>
-          <div className="flex justify-end">
+          <div className="flex justify-center items-center">
             {!loading ? (
               <Button className="w-full sm:w-52">SEND MESSAGE</Button>
             ) : (

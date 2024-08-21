@@ -1,10 +1,10 @@
 const Footer = () => {
   return (
-    <footer className="p-5 mt-6 w-full max-w-[1050px] mx-auto">
-      <hr />
-      <h1 className="text-tubeLight-effect text-3xl mt-5 justify-center sm:justify-start tracking-[8px]">
-        Thanks For Scrolling
-      </h1>
+    <footer className="p-6 mt-8 w-full max-w-[1050px] mx-auto text-center flex flex-col items-center">
+      <hr className="w-full border-gray-300 mb-6" />
+      <p className="text-gray-600">
+        © {new Date().getFullYear()} Epsilen Porfolio. All rights reserved.
+      </p>
     </footer>
   );
 };

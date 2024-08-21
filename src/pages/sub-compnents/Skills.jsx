@@ -15,6 +15,7 @@ const Skills = () => {
     };
     getMySkills();
   }, []);
+
   return (
     <div className="w-full flex flex-col gap-8 sm:gap-12">
       <h1
@@ -28,13 +29,15 @@ const Skills = () => {
           skills.map((element) => {
             return (
               <Card
-                className="h-fit p-7 flex flex-col justify-center items-center gap-3"
+                className="h-fit p-7 flex flex-col justify-center items-center gap-3
+                transition-transform transform hover:scale-105 hover:shadow-lg
+                hover:bg-gray-100"
                 key={element._id}
               >
                 <img
                   src={element.svg && element.svg.url}
                   alt="skill"
-                  className="h-12 sm:h-24 w-auto"
+                  className="h-12 sm:h-24 w-auto transition-transform transform hover:scale-110"
                 />
                 <p className="text-muted-foreground text-center">
                   {element.title}

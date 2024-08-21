@@ -1,0 +1,183 @@
+/* Ensure to include media queries or responsive design strategies for mobile devices */
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  /* Optional background color for better contrast */
+}
+
+.book {
+  width: 300px; /* Initial smaller width */
+  height: 400px; /* Initial smaller height */
+  perspective: 1500px; /* Increased perspective for a better 3D effect */
+  cursor: pointer;
+  transition: width 0.8s, height 0.8s; /* Smooth transition for size change */
+  position: relative; /* Ensure positioning context for the book */
+}
+
+.book.flipped {
+  width: 900px; /* Increased width when flipped */
+  height: 600px; /* Increased height when flipped */
+}
+
+.book-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.book.flipped .book-inner {
+  transform: rotateY(180deg);
+}
+
+.book-front,
+.book-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-front {
+  background: linear-gradient(to right, #4a00e0, #8e2de2);
+  color: white;
+  font-size: 1.5rem; /* Font size for the front cover */
+  font-weight: bold;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Hide any overflow */
+}
+
+.cover-title {
+  font-size: 1.5rem; /* Font size for front cover */
+}
+
+.book-back {
+  background: #ffffff;
+  transform: rotateY(180deg);
+  display: flex;
+}
+
+.page-content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.left-page,
+.right-page {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.left-page {
+  width: 40%; /* 40% width for the image */
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image {
+  width: 100%; /* Full width within the left-page */
+  height: 100%; /* Full height within the left-page */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.right-page {
+  width: 60%; /* 60% width for the introduction */
+  background: #ffffff;
+  padding: 2rem; /* Padding for better layout */
+  color: #333333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Align text to start of the container */
+  overflow-y: auto; /* Scroll if content overflows */
+}
+
+.right-page h1 {
+  font-size: 2.5rem; /* Larger font size for the introduction title */
+  color: #4a00e0;
+  margin-bottom: 1rem;
+}
+
+.right-page p {
+  font-size: 1.5rem; /* Larger font size for the introduction text */
+  line-height: 1.8;
+  text-align: left; /* Align text to the left for better readability */
+  margin-bottom: 1rem;
+  color: #666666;
+  max-width: 90%; /* Ensures text doesn't overflow */
+}
+
+/* Mobile View */
+@media (max-width: 628px) {
+  .book {
+    width: 90vw; /* Increase width for mobile view */
+    height: auto; /* Adjust height for mobile view */
+  }
+
+  .book.flipped {
+    width: 90vw; /* Adjust width for mobile view when flipped */
+    height: auto; /* Adjust height for mobile view when flipped */
+  }
+
+  .book.flipped .book-inner {
+    transform: rotateY(0);
+  }
+
+  /* .book-inner {
+    display: flex;
+    flex-direction: column;
+  } */
+
+  .book-front,
+  .book-back {
+    position: relative;
+    width: 100%;
+    height: auto;
+    backface-visibility: visible;
+    transform: none;
+  }
+
+  .left-page {
+    width: 0; /* Full width for mobile view */
+    height: auto;
+  }
+
+  .profile-image {
+    width: 100%; /* Full width within the left-page */
+    height: auto;
+    visibility: hidden; /* Adjust height for mobile view */
+  }
+
+  .right-page {
+    width: 100%; /* Full width for mobile view */
+    padding: 1rem; /* Adjust padding for mobile view */
+    background: black;
+  }
+
+  .cover-title {
+    font-size: 1.2rem; /* Adjust font size for mobile */
+  }
+
+  .right-page h1 {
+    font-size: 2rem;
+    color: #ffffff; /* Adjust font size for mobile */
+  }
+
+  .right-page p {
+    font-size: 1.2rem; /* Adjust font size for mobile */
+    color: white;
+  }
+}

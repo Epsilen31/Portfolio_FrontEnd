@@ -1,6 +1,15 @@
+/* Portfolio.css */
+
 .project-banner {
-  width: 100%; /* Set width as needed */
-  height: 280px; /* Set height to ensure consistency */
+  width: 100%; /* Make sure images take up full width of their container */
+  height: 280px; /* Consistent height */
   object-fit: cover; /* Ensure the image covers the area */
   border-radius: 8px; /* Optional: add border radius for rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.project-banner:hover {
+  transform: scale(1.05); /* Slightly zoom in on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add shadow effect on hover */
 }
